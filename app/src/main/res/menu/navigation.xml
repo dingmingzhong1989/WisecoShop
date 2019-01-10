@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home_goods"
+        android:icon="@drawable/home_goods_shape"
+        android:title="产品推荐"
+        
+
+       />
+
+    <item
+        android:id="@+id/navigation_home_life"
+        android:icon="@drawable/home_life_shape"
+        android:title="生活优惠" />
+    <item
+        android:id="@+id/navigation_home_user"
+        android:icon="@drawable/home_user_shape"
+        android:title="个人中心" />
+
+
+</menu>

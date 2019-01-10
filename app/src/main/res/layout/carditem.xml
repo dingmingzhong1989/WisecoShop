@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="187dp"
+    android:background="@drawable/itembg"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="16dp"
+        android:paddingLeft="17dp"
+        android:paddingRight="17dp">
+        <LinearLayout
+            android:paddingTop="10dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/bankicon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+
+                android:src="@drawable/first" />
+
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="财星卡"
+                android:textColor="#4D4D4D"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <LinearLayout
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:id="@+id/cardicon"
+                    android:layout_width="142dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/card_img" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:padding="2dp"
+                        android:text="已有189人申请"
+                        android:textColor="#FF9A9A"
+                        android:textSize="9sp" />
+
+                    <ProgressBar
+
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="70dp"
+                        android:layout_height="6dp"
+                        android:layout_gravity="right"
+                        android:gravity="right"
+                        android:max="100"
+                        android:progress="80"
+                        android:progressDrawable="@drawable/progress_gray" />
+
+                </LinearLayout>
+
+                <LinearLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="22dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="￥"
+                        android:textColor="#FF5757"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="50000"
+                        android:textColor="#FF5757"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center_vertical"
+                        android:text="最高额度"
+                        android:textColor="#808080"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:lineSpacingExtra="5dp"
+                    android:id="@+id/advantage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="left"
+                    android:text="消费无忧,缺钱不愁"
+                    android:textColor="#808080"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/bar"
+            android:background="@color/gray_bbbbbb" />
+
+
+            <LinearLayout
+                android:id="@+id/keyword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="7dp"
+                android:gravity="left"
+                android:orientation="horizontal">
+<!--
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:drawableLeft="@drawable/dui"
+                    android:drawablePadding="3dp"
+                    android:text="优惠机票"
+                    android:textColor="#61A0F1"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:drawableLeft="@drawable/xing"
+                    android:drawablePadding="3dp"
+                    android:text="刷卡金"
+                    android:textColor="#61A0F1"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:drawableLeft="@drawable/sun"
+                    android:drawablePadding="3dp"
+                    android:text="多重礼品"
+                    android:textColor="#61A0F1"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:drawableLeft="@drawable/heart"
+                    android:drawablePadding="3dp"
+                    android:text="个性定制"
+                    android:textColor="#61A0F1"
+                    android:textSize="13sp" />-->
+
+
+
+
+            </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

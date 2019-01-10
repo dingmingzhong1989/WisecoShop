@@ -1,0 +1,25 @@
+{
+  "LoginActivity": "AndroidP01",
+  "PhoneCodeActivity": "AndroidP02",
+  "RegistIDCardActivity_": "AndroidP03",
+  "AgreementActivity": "AndroidP04",
+  "MainActivity": "AndroidP06",
+  "CardDetailActivity": "AndroidP09",
+  "GoodsListActivity": "AndroidP07",
+  "MoneyDetailActivity": "AndroidP08",
+  "DiscountActivity": "AndroidP11",
+  "DiscountListAcyivity": "AndroidP13",
+  "DiscountDetailAcyivity": "AndroidP12",
+  "DiscountChannelAcyivity": "AndroidP14",
+  "MyCardActivity": "AndroidP17",
+  "AddCardActivity": "AndroidP18",
+  "OrderActivity": "AndroidP19",
+  "OrderCardDetailActivity": "AndroidP21",
+  "OrderMoneyDetailActivity": "AndroidP20",
+  "MyTicketActivity": "AndroidP22",
+  "SettingActivity": "AndroidP23",
+  "OpinionActivity": "AndroidP24",
+  "AboutUsActivity": "AndroidP25"
+}
+
+

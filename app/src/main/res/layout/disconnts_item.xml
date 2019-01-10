@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+
+    <ImageView
+        android:id="@+id/lv_image"
+        android:layout_width="110dp"
+        android:layout_height="75dp"
+        android:src="@color/bg_yellow" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="12dp">
+
+
+        <TextView
+            android:id="@+id/lv_text_til"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="睿智银行"
+            android:textColor="@color/statetext"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/lv_text_con"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="精品酒店套餐599元购1000元下午茶"
+            android:textColor="#808080"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/times"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="right"
+            android:text="每天"
+            android:textColor="#6BAEFF"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+</LinearLayout>

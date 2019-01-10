@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/bar"
+        android:paddingTop="40px"
+        android:layout_width="match_parent"
+        android:layout_height="100px">
+
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageButton
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:background="@color/transparent"
+                android:padding="40px"
+                android:src="@drawable/back" />
+
+            <TextView
+                android:id="@+id/bar_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="我的卡"
+                android:textColor="@color/statetext"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:tag="_P17_T20"
+                android:id="@+id/add_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:background="@color/transparent"
+                android:padding="40px"
+                android:src="@drawable/add_icon" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycle_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/bar" />
+
+    <com.wiseco.wisecoshop.view.LoadingView
+        android:id="@+id/mLoadingView"
+        android:layout_below="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.wiseco.wisecoshop.view.LoadingView>
+
+</RelativeLayout>

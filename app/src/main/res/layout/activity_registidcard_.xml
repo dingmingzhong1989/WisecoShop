@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pup"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+
+    <LinearLayout
+        android:id="@+id/lin_max"
+        android:background="#F5FAFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bar"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:background="@color/white"
+            android:id="@+id/step"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:drawablePadding="15dp"
+                    android:drawableTop="@drawable/goods"
+                    android:gravity="center"
+                    android:text="选择分类"
+                    android:textColor="#4D4D4D"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="----------"
+                    android:textColor="#4D4D4D"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:drawablePadding="15dp"
+                    android:drawableTop="@drawable/userpass"
+                    android:gravity="center"
+                    android:text="身份验证"
+                    android:textColor="#0073E8"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="----------"
+                    android:textColor="#4D4D4D"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:drawablePadding="15dp"
+                    android:drawableTop="@drawable/recommend"
+                    android:gravity="center"
+                    android:text="推荐产品"
+                    android:textColor="#4D4D4D"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/rel"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <TableLayout
+                android:id="@+id/usernameLinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="29dp"
+                    android:gravity="left">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="完善个人信息"
+                        android:textColor="#333333"
+                        android:textSize="21sp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="left">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="填写正确信息有助于加快审核"
+                        android:textColor="#808080"
+                        android:textSize="13sp" />
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginTop="30.0dip"
+                    android:gravity="left">
+
+                    <LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="姓       名 "
+                            android:textColor="#808080"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:tag="_P03_T06"
+                            android:id="@+id/userName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:ems="12"
+                            android:gravity="left|center"
+                            android:hint="请输入您的姓名"
+                            android:inputType="text"
+                            android:lines="1"
+                            android:maxLength="10"
+                            android:paddingLeft="10.0dip"
+                            android:singleLine="true"
+                            android:textColor="#4D4D4D"
+                            android:textColorHint="#cccccc"
+                            android:textSize="15sp">
+
+                        </EditText>
+                    </LinearLayout>
+
+                </TableRow>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/bar"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#cccccc" />
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="left">
+
+                    <LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="身份证号"
+                            android:textColor="#808080"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:tag="_P03_T07"
+                            android:id="@+id/id_code"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:background="@color/white"
+                            android:ems="12"
+                            android:gravity="left|center"
+                            android:hint="请输入身份证号"
+                            android:inputType="text"
+                            android:lines="1"
+                            android:maxLength="18"
+                            android:paddingLeft="10.0dip"
+                            android:singleLine="true"
+                            android:textColor="#4D4D4D"
+                            android:textColorHint="#cccccc"
+                            android:textSize="15sp"/>
+
+
+                    </LinearLayout>
+
+
+                </TableRow>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/bar"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#cccccc" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="left">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <CheckBox
+                            android:tag="_P03_T08"
+                            android:id="@+id/login_check"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/checkbox_selector"
+                            android:button="@null"
+                            android:gravity="center" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="同意"
+                            android:textColor="#808080"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:tag="_P03_T10"
+                            android:id="@+id/text_one"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="《个人信息使用授权书》"
+                            android:textColor="#0073E8"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:tag="_P03_T11"
+                            android:id="@+id/text_two"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="《数据解析服务协议》"
+                            android:textColor="#0073E8"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="29dp"
+                    android:gravity="left"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <TextView
+                            android:id="@+id/text_three"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="《睿智科技注册协议》"
+                            android:textColor="#0073E8"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+
+                </TableRow>
+
+            </TableLayout>
+
+            <Button
+                android:tag="_P03_T09"
+                android:id="@+id/btn_next"
+                android:layout_width="320dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/codebtn_selector"
+                android:gravity="center"
+                android:text="下一步"
+                android:textColor="#FFFFFF"
+                android:textSize="19sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bar"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingTop="20dp">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@color/transparent"
+            android:padding="15dp"
+            android:src="@drawable/back" />
+
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/jump"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="@dimen/dimen_9dp"
+        android:background="@android:color/transparent"
+        android:text="跳 过"
+        android:textColor="@color/colorAccent"
+        android:textSize="20dp"
+        android:visibility="gone" />
+</RelativeLayout>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rel_main"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/headerbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="23dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="所属银行"
+                android:textColor="@color/statetext"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/choice_bank"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/class_list"
+                android:gravity="right|center_vertical"
+                android:paddingRight="23dp"
+                android:text="请选择银行"
+                android:textColor="@color/statetext"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#F5F5F5" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="23dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="卡种"
+                android:textColor="@color/statetext"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/choice_card_type"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/class_list"
+                android:gravity="right|center_vertical"
+                android:paddingRight="23dp"
+                android:text="请选择卡种"
+                android:textColor="@color/statetext"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#F5F5F5" />
+
+        <LinearLayout
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="23dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="卡尾号"
+                android:textColor="@color/statetext"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/cardnum"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+
+                android:maxLength="4"
+                android:gravity="right|center_vertical"
+                android:hint="请输入信用卡后四位"
+                android:inputType="number"
+                android:paddingRight="23dp"
+                android:singleLine="true"
+                android:textColor="@color/statetext"
+                android:textColorHint="@color/statetext"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#F5F5F5" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="23dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="还款日提醒"
+                android:textColor="@color/statetext"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/choice_data"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/class_list"
+                android:gravity="right|center_vertical"
+                android:paddingRight="23dp"
+                android:text="请选择还款日"
+                android:textColor="@color/statetext"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#F5F5F5" />
+
+        <TextView
+            android:id="@+id/commit"
+            android:layout_width="326dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/shape_commit_bg"
+            android:gravity="center"
+            android:tag="_P18_T21"
+            android:text="提交信息"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

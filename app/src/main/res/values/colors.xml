@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="blue">#0074FF</color>
+    <color name="statetext">#333333</color>
+    <color name="keyword">#61A0F1</color>
+
+
+    <color name="statetextmore">#7F7F7F</color>
+    <color name="background">#F5F5F5</color>
+    <!-- 分割线  提示文字-->
+    <color name="gray_bbbbbb">#ececec</color>
+
+    <color name="red_fe7a9cC">#FE8A9C</color>
+
+    <!--footbar_bg-->
+    <color name="footbar_bg">#FAFAFA</color>
+
+    <!--说明文字 -->
+    <color name="black_51617e">#999999</color>
+    <!--白色文字-->
+    <color name="white">#ffffff</color>
+
+    <!--字体红-->
+
+
+    <color name="red_6f7f9a">#6f7f9a</color>
+
+    <color name="color_8080">#808080</color>
+
+    <color name="black_4d4d4d">#4D4D4D</color>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--背景红-->
+    <color name="red_fe566f">#FC6194</color>
+    <!--最深-->
+    <color name="black_212121">#212121</color>
+    <!--大标题-->
+    <color name="black_3c4d6b">#3c4d6b</color>
+    <!--中浅色-->
+    <color name="black_6b7993">#6b7993</color>
+    <color name="black_fe5c74">#fe5c74</color>
+    <!--最浅-->
+    <color name="black_afafaf">#afafaf</color>
+
+
+    <!--背景黑-->
+    <color name="black_3d4d6b">#3d4d6b</color>
+    <color name="black_79869d">#79869d</color>
+
+
+
+    <!--背景色-->
+    <color name="gray_f9f9dc">#f9f9fc</color>
+
+    <!--深灰 首页-->
+    <color name="gray_f2f2f2">#F2F2F2</color>
+    <color name="gray_a9a9a9">#A9A9A9</color>
+
+    <color name="gray_888888">#888888</color>
+    <color name="blue5">#10D3C6</color>
+
+    <color name="lgreen">#43d95d</color>
+    <color name="green_00A4A4">#00A4A4</color>
+    <color name="green_16B28B">#16B28B</color>
+    <color name="green_17b18b">#17b18b</color>
+
+    <color name="bg_yellow">#FDCB01</color>
+    <color name="bar_grey">#393a3e</color>
+
+    <color name="black">#666666</color>
+    <color name="color_69">#999999</color>
+    <color name="image_overlay_true">#80000000</color>
+    <color name="image_overlay_false">#20000000</color>
+    <color name="line_color">#EEEEEE</color>
+    <color name="color_fa">#FAFAFA</color>
+    <color name="tab_color_true">#FA632D</color>
+    <color name="tab_color_false">#9b9b9b</color>
+    <color name="color_f2">#F2F2F2</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent_white">#F0FFFFFF</color>
+    <color name="transparent_db">#E0DBDBDB</color>
+    <color name="color_53">#53575e</color>
+    <color name="color_f0">#F0F0F0</color>
+    <color name="bar_grey_90">#dd393a3e</color>
+
+    <color name="color_orange">#E0FF6100</color>
+    <color name="color_f6">#F6F6F6</color>
+
+    <color name="ind_red">#B30E17</color>
+    <color name="blue_light">#00C0E4</color>
+    <color name="material_orange">#ffEF6C00</color>
+
+
+    <color name="text_dark_gray">#999999</color>
+
+    <color name="theme_color">#1370c0</color>
+</resources>

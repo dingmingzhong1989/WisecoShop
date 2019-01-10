@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#f0f0f0"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:background="@color/white"
+        android:paddingTop="40px"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageButton
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:background="@color/transparent"
+                android:padding="40px"
+                android:src="@drawable/back" />
+
+            <TextView
+                android:id="@+id/tv_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingRight="18dp"
+                android:text="搜索"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+
+            <LinearLayout
+
+                android:id="@+id/lin_search"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="11dp"
+                android:layout_marginRight="11dp"
+                android:layout_toLeftOf="@+id/tv_search"
+                android:layout_toRightOf="@+id/back"
+                android:background="@drawable/search_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="9dp"
+                    android:src="@drawable/search" />
+
+                <com.wiseco.wisecoshop.view.city.EditTextWithDel
+                    android:id="@+id/et_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/transparent"
+                    android:cursorVisible="false"
+                    android:hint="输入城市名称"
+                    android:singleLine="true" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/lin"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/head"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/pois"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:paddingLeft="17dp">
+
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="当前位置："
+                android:textColor="@color/statetext"
+                android:textSize="14sp" />
+
+            <TextView
+
+                android:id="@+id/current_poistion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="东城区东单街道"
+                android:textColor="@color/statetext"
+                android:textSize="14sp" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:visibility="invisible"
+            android:gravity="right|center_vertical"
+            android:text="选择区县"
+            android:id="@+id/poistion_dropDownMenu"
+            android:paddingRight="20dp"
+            android:drawableRight="@mipmap/drop_down_unselected_icon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lin">
+
+
+    </ListView>
+
+    <com.wiseco.wisecoshop.view.city.SideBar
+        android:id="@+id/sidrbar"
+        android:layout_width="25dp"
+        android:layout_height="400dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/head"
+        android:layout_marginTop="50dp" />
+
+    <!-- <LinearLayout
+         android:layout_below="@+id/head"
+         android:layout_toRightOf="@+id/lin"
+         android:layout_alignParentRight="true"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:background="@color/white">
+
+         <com.yyydjk.library.DropDownMenu
+             android:id="@+id/poistion_dropDownMenu"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginRight="17dp"
+             android:background="@color/transparent"
+             app:dddividerColor="@color/transparent"
+             app:ddmaskColor="@color/transparent"
+             app:ddmenuBackgroundColor="@color/transparent"
+             app:ddmenuSelectedIcon="@mipmap/drop_down_selected_icon"
+             app:ddmenuTextSize="14sp"
+             app:ddmenuUnselectedIcon="@mipmap/drop_down_unselected_icon"
+             app:ddtextSelectedColor="#808080"
+             app:ddtextUnselectedColor="#808080"
+             app:ddunderlineColor="@color/transparent" />
+
+
+     </LinearLayout>-->
+</RelativeLayout>

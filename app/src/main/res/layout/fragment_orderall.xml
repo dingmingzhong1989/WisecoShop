@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5FAFF"
+    android:orientation="vertical">
+
+    <LinearLayout
+    android:id="@+id/inde"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/tablayout"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/line_one"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <TextView
+
+            android:layout_width="30dp"
+            android:layout_height="3dp"
+            android:background="#0073E8" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/line_two"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="3dp"
+            android:background="#0073E8" />
+
+    </LinearLayout>
+
+</LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:overScrollMode="never"
+        android:id="@+id/recycleorder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/inde"
+        >
+
+    </android.support.v7.widget.RecyclerView>
+
+    <com.wiseco.wisecoshop.view.LoadingView
+        android:id="@+id/mLoadingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.wiseco.wisecoshop.view.LoadingView>
+</RelativeLayout>

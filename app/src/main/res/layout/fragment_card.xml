@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5FAFF"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/inde"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tablayout"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/line_one"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingRight="30dp"
+            android:gravity="right">
+
+            <TextView
+
+                android:layout_width="30dp"
+                android:layout_height="3dp"
+                android:background="#0073E8" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line_two"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="30dp"
+            android:gravity="left">
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="3dp"
+                android:background="#0073E8" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <android.support.design.widget.TabLayout
+        android:layout_below="@+id/inde"
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/white"
+        app:tabBackground="@android:color/transparent"
+        android:gravity="center_vertical"
+        app:tabIndicatorHeight="0dp"
+       app:tabPaddingEnd="5dp"
+        app:tabPaddingStart="5dp"
+        app:tabMode="scrollable" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclecard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tabLayout"
+      >
+
+    </android.support.v7.widget.RecyclerView>
+
+    <com.wiseco.wisecoshop.view.LoadingView
+        android:id="@+id/mLoadingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.wiseco.wisecoshop.view.LoadingView>
+</RelativeLayout>

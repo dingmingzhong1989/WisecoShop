@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="17dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="定位/最近访问"
+            android:textColor="#808080"
+            android:textSize="15sp"
+
+            />
+
+        <com.wiseco.wisecoshop.view.city.MyGridView
+            android:listSelector="@android:color/transparent"
+            android:id="@+id/gv_his_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:verticalSpacing="10dp"
+            android:numColumns="3"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="17dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="热门城市"
+            android:textColor="#808080"
+            android:textSize="15sp"
+
+            />
+
+        <com.wiseco.wisecoshop.view.city.MyGridView
+            android:listSelector="@android:color/transparent"
+            android:id="@+id/gv_hot_city"
+            android:verticalSpacing="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="3"></com.wiseco.wisecoshop.view.city.MyGridView>
+
+    </LinearLayout>
+
+</LinearLayout>

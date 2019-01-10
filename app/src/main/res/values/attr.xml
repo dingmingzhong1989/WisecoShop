@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MoreTextStyle">
+        <!--内容大小-->
+        <attr name="textSize" format="dimension" />
+        <!--内容颜色-->
+        <attr name="textColor" format="color" />
+        <!--内容默认最大行数-->
+        <attr name="maxLine" format="integer" />
+        <!--展开/收起图标-->
+        <attr name="expandIcon" format="reference" />
+        <!--展开/收起动画执行时间-->
+        <attr name="durationMillis" format="integer" />
+        <!--可点击区域，默认展开/收起区域可点击-->
+        <attr name="clickAll" format="boolean" />
+        <attr name="text" format="string" />
+    </declare-styleable>
+</resources>

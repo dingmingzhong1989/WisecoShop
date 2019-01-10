@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/headerbar" />
+
+    <LinearLayout
+        android:id="@+id/ll_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/location_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/dinwei" />
+
+        <TextView
+            android:id="@+id/location_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:text="东四西大街"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <com.wiseco.wisecoshop.view.ControlableScrollView
+        android:id="@+id/ControlableScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_location"
+        android:background="@color/white">
+
+
+        <LinearLayout
+            android:focusable="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+            />
+
+
+            <com.stx.xhb.xbanner.XBanner
+                android:id="@+id/life_banner_partner"
+                android:layout_width="wrap_content"
+                android:layout_height="155dp"
+                app:AutoPlayTime="3000"
+                app:pointsVisibility="true" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <com.wiseco.wisecoshop.view.ChannelGridView
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:listSelector="@android:color/transparent"
+                    android:id="@+id/life_gridview_channel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:numColumns="4"
+                    android:verticalSpacing="10dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="3dp"
+                        android:layout_height="19dp"
+                        android:layout_marginLeft="18dp"
+                        android:background="@drawable/tag_shape"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="11dp"
+                        android:text="附近推荐"
+                        android:textColor="@color/statetext"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:tag="_P10_T42"
+                        android:id="@+id/life_vip_discounts"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:drawablePadding="5dp"
+                        android:drawableRight="@drawable/user_more"
+                        android:gravity="right|center_vertical"
+                        android:paddingRight="16dp"
+                        android:text="专属优惠"
+                        android:textColor="@color/statetextmore"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E6E6E6" />
+
+
+                <ListView
+                    android:tag="_life"
+                    android:id="@+id/life_discounts_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="#00000000" />
+
+
+            </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/channel_fragment_layout_rlt_footer"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/white"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:id="@+id/loading_text_view"
+                        android:textSize="15sp"
+                        android:textColor="@color/black_4d4d4d"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="努力加载中...." />
+
+                    <ProgressBar
+                        android:id="@+id/loading_progressBar"
+                        style="?android:attr/progressBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@+id/loading_text_view" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+    </com.wiseco.wisecoshop.view.ControlableScrollView>
+    <com.wiseco.wisecoshop.view.LoadingView
+        android:id="@+id/mLoadingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header">
+
+    </com.wiseco.wisecoshop.view.LoadingView>
+</RelativeLayout>

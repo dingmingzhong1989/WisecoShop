@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:gravity="center_horizontal"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:id="@+id/lin"
+        android:layout_width="280dp"
+        android:layout_height="285dp"
+        android:background="@drawable/shape_dialog_exit"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="42dp"
+            android:src="@drawable/successfully" />
+
+        <TextView
+            android:id="@+id/cancel_dialog_log_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="您已注册成功"
+            android:textColor="@color/black_4d4d4d"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/finish"
+            android:layout_width="186dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="52dp"
+            android:background="@drawable/shape_login_btn_bg"
+            android:gravity="center"
+            android:text="完成"
+            android:textColor="#4297FC"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@color/transparent"
+        android:src="@drawable/cancel" />
+</LinearLayout>

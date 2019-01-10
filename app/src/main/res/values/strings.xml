@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">快易省</string>
+
+    <!-- 清除缓存 -->
+    <string name="clear_cache_counting">正在计算...</string>
+    <string name="clear_cache_dialog_title">确定删除所有缓存？</string>
+    <string name="clear_cache_dialog_confirm">确定</string>
+    <string name="clear_cache_dialog_cancel">取消</string>
+    <string name="clear_cache_toast_success">清除成功！</string>
+    <string name="loading_dialog_message">加载中...</string>
+    <string name="main_activity_exit_toast">再按一次退出</string>
+    <string name="check_version_toast_newest">已是最新版本</string>
+    <string name="title_dialog">友情提示</string>
+    <string name="message_permission_failed">尚未获取SD卡读取权限</string>
+    <string name="message_permission_rationale">获取SD卡读取权限</string>
+    <string name="btn_dialog_yes_permission">去设置</string>
+    <string name="btn_dialog_no_permission">取消</string>
+    <string name="message_setting_back">用户从设置回来了</string>
+    <string name="message_post_succeed">获取SD卡权限成功</string>
+    <string name="message_post_failed">获取SD卡权限失败</string>
+
+    <string name="dialog_exit_confirm">确定退出？</string>
+    <string name="dialog_exit_cancel">取消</string>
+    <string name="dialog_exit_quit">退出</string>
+    <string name="settings_toast_log_out_success">退出成功</string>
+    <string name="network_not_available">网络不可用，请联网！</string>
+
+    <!-- 定位-->
+    <string name="provider_settings_message">Your GPS seems to be disabled, do you want to enable it?</string>
+    <string name="provider_settings_yes">Yes</string>
+    <string name="provider_settings_no">No</string>
+    <string name="address">北京</string>
+</resources>

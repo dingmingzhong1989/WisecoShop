@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/finish"
+        android:paddingTop="50dp"
+        android:paddingBottom="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#4D4D4D"
+        android:textSize="14sp" />
+
+    <!--
+        <TextView
+            android:layout_marginTop="20dp"
+          android:layout_below="@+id/finish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="点击返回顶部"
+            android:textColor="#0073E8"
+            android:textSize="14sp" />-->
+
+
+</RelativeLayout>

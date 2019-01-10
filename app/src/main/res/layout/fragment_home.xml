@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/headerbar" />
+
+
+    <ScrollView
+        android:id="@+id/myScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+            />
+
+            <com.stx.xhb.xbanner.XBanner
+                android:id="@+id/banner_partner"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_below="@+id/card_goods"
+                app:AutoPlayTime="3000"
+                app:pointsVisibility="true"
+
+                />
+
+            <RelativeLayout
+                android:id="@+id/fragment_home_new_user"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/new_welfare_bg">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/content" />
+
+                <ImageView
+                    android:id="@+id/regiest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/button"
+                    android:tag="_P06_T34" />
+
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="3dp"
+                        android:layout_height="19dp"
+                        android:layout_marginLeft="18dp"
+                        android:background="@drawable/tag_shape"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="11dp"
+                        android:text="我要借款"
+                        android:textColor="@color/statetext"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:tag="_P06_T36"
+                        android:id="@+id/fragmeng_home_more_money"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:drawableRight="@drawable/user_more"
+                        android:gravity="right|center_vertical"
+                        android:paddingRight="16dp"
+                        android:text="更多"
+                        android:textColor="@color/statetextmore"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E6E6E6" />
+
+                <com.wiseco.wisecoshop.view.ListViewForScrollView
+                    android:tag="H16"
+                    android:id="@+id/fragmeng_home_money_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@color/transparent"
+                    android:listSelector="@android:color/transparent">
+
+
+                </com.wiseco.wisecoshop.view.ListViewForScrollView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="3dp"
+                        android:layout_height="19dp"
+                        android:layout_marginLeft="18dp"
+                        android:background="@drawable/tag_shape"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="11dp"
+                        android:text="我要办卡"
+                        android:textColor="@color/statetext"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:tag="_P06_T35"
+                        android:id="@+id/fragmeng_home_more_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:drawableRight="@drawable/user_more"
+                        android:gravity="right|center_vertical"
+                        android:paddingRight="16dp"
+                        android:text="更多"
+                        android:textColor="@color/statetextmore"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E6E6E6" />
+
+                <com.wiseco.wisecoshop.view.ListViewForScrollView
+                    android:tag="H15"
+                    android:id="@+id/fragmeng_home_card_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:divider="#00000000"
+                    android:listSelector="@android:color/transparent">
+
+
+                </com.wiseco.wisecoshop.view.ListViewForScrollView>
+
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="3dp"
+                        android:layout_height="19dp"
+                        android:layout_marginLeft="18dp"
+                        android:background="@drawable/tag_shape"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="11dp"
+                        android:text="合作机构"
+                        android:textColor="@color/statetext"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E6E6E6" />
+
+                <com.wiseco.wisecoshop.view.ChannelGridView
+                    android:id="@+id/gridview_partner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@color/transparent"
+                    android:horizontalSpacing="5dp"
+                    android:listSelector="@android:color/transparent"
+                    android:numColumns="5"
+                    android:overScrollMode="never"
+                    android:padding="10dp"
+                    android:paddingBottom="14dp"
+                    android:verticalSpacing="5dp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <com.wiseco.wisecoshop.view.LoadingView
+        android:id="@+id/mLoadingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header">
+
+    </com.wiseco.wisecoshop.view.LoadingView>
+</RelativeLayout>
