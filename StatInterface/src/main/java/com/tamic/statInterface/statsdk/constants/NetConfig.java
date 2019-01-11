@@ -16,23 +16,23 @@ public class NetConfig {
     /**
      * You Url
      */
-    public static String BASE_URL ="https://m.wisecofincloud.com/api/eventlog/sendlog";
+    public static String BASE_URL ="https://m.wisecofincloud.com";
     /**
      * You Url
      */
     public static String ONLINE_URL ="https://m.wisecofincloud.com/api/eventlog/sendlog";
 
     /**
-     * 数据上报Debug Url
+     * 数据Url
      */
-    public static final String URL =BASE_URL+"/api/eventlog/sendlog";
+    public static String EVENTLOG = BASE_URL + "/api/eventlog/sendlog" ;
 
 
 
     /**
      * 临时id
      */
-    public static final String ENVBASE ="https://dev.wisecofincloud.com/api/eventlog/envbase";
+    public static final String ENVBASE =BASE_URL+"/api/eventlog/envbase";
 
     /**
      * 检查版本

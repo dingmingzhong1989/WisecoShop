@@ -45,7 +45,7 @@ public class SplashActivity extends BaseMainActivity {
                // finish();
                 isFirstOpen();
             }
-        }, 3000);
+        }, 5000);
     }
     @Override
     protected void postAgain() {

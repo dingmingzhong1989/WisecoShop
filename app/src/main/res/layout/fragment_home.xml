@@ -35,6 +35,21 @@
 
                 />
 
+            <com.sunfusheng.marqueeview.MarqueeView
+                android:layout_marginTop="10dp"
+                android:id="@+id/marqueeView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                app:mvAnimDuration="1000"
+                app:mvGravity="center"
+                app:mvDirection="bottom_to_top"
+                app:mvInterval="3000"
+                app:mvSingleLine="true"
+                app:mvTextColor="@color/black_4d4d4d"
+                app:mvTextSize="14sp" />
+
             <RelativeLayout
                 android:id="@+id/fragment_home_new_user"
                 android:layout_width="match_parent"
@@ -59,6 +74,7 @@
                     android:tag="_P06_T34" />
 
             </RelativeLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -90,13 +106,14 @@
                         android:textSize="18dp" />
 
                     <TextView
-                        android:tag="_P06_T36"
+                        android:drawablePadding="5dp"
                         android:id="@+id/fragmeng_home_more_money"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:drawableRight="@drawable/user_more"
                         android:gravity="right|center_vertical"
                         android:paddingRight="16dp"
+                        android:tag="_P06_T36"
                         android:text="更多"
                         android:textColor="@color/statetextmore"
                         android:textSize="12dp" />
@@ -108,16 +125,17 @@
                     android:background="#E6E6E6" />
 
                 <com.wiseco.wisecoshop.view.ListViewForScrollView
-                    android:tag="H16"
                     android:id="@+id/fragmeng_home_money_list"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:divider="@color/transparent"
-                    android:listSelector="@android:color/transparent">
+                    android:listSelector="@android:color/transparent"
+                    android:tag="H16">
 
 
                 </com.wiseco.wisecoshop.view.ListViewForScrollView>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -149,14 +167,15 @@
                         android:textSize="18dp" />
 
                     <TextView
-                        android:tag="_P06_T35"
                         android:id="@+id/fragmeng_home_more_card"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:drawableRight="@drawable/user_more"
                         android:gravity="right|center_vertical"
                         android:paddingRight="16dp"
+                        android:tag="_P06_T35"
                         android:text="更多"
+                        android:drawablePadding="5dp"
                         android:textColor="@color/statetextmore"
                         android:textSize="12dp" />
                 </LinearLayout>
@@ -167,20 +186,18 @@
                     android:background="#E6E6E6" />
 
                 <com.wiseco.wisecoshop.view.ListViewForScrollView
-                    android:tag="H15"
                     android:id="@+id/fragmeng_home_card_list"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:divider="#00000000"
-                    android:listSelector="@android:color/transparent">
+                    android:listSelector="@android:color/transparent"
+                    android:tag="H15">
 
 
                 </com.wiseco.wisecoshop.view.ListViewForScrollView>
 
 
             </LinearLayout>
-
-
 
 
             <LinearLayout

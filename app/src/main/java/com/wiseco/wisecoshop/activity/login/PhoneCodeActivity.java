@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.tamic.statInterface.statsdk.sp.SharedPreferencesHelper;
 import com.wiseco.wisecoshop.R;
 import com.wiseco.wisecoshop.activity.MainActivity;
 import com.wiseco.wisecoshop.base.BaseActivity;
@@ -146,8 +147,8 @@ public class PhoneCodeActivity extends BaseActivity {
                            // HttpPostUtils.putEventTag(getUserId(),"","","",CONTENT_EVENT_VERIFY_CODE,COMMENT_EVENT_VERIFY_CODE_SUCCESS);
 
                             CacheUtil.putString(sContext, "USERID", messageCodeBean.getUserId());
-
-                            getUserId(messageCodeBean.getUserId());
+                            SharedPreferencesHelper.getInstance(sContext).putString("UserId", messageCodeBean.getUserId());
+                          //  getUserId(messageCodeBean.getUserId());
 
                             if (messageCodeBean.getIdcstatus().equals("F")) {
 

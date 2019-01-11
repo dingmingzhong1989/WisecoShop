@@ -4,28 +4,28 @@
     package="com.wiseco.wisecoshop">
 
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.READ_SMS" />
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <!-- 拨号权限 -->
-    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <!--图片不被压缩-->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:name=".MyApplication"
@@ -83,27 +83,30 @@
         <activity android:name=".activity.login.FindPasswordActivity" />
         <activity android:name=".activity.login.FindByPhoneActivity" />
         <activity android:name=".activity.login.SetPasswordActivity" />
-        <activity android:name=".activity.MainActivity" >
+        <activity android:name=".activity.MainActivity">
 
 
-            <action android:name="android.intent.action.VIEW"/>
-            <category android:name="android.intent.category.DEFAULT"/>
-            <category android:name="android.intent.category.BROWSABLE"/>
-            <data android:scheme="wisecoshop"
+            <action android:name="android.intent.action.VIEW" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+
+            <data
                 android:host="into_ma"
-                />
+                android:scheme="wisecoshop"/>
 
 
         </activity>
         <activity android:name=".activity.login.LoginActivity_" />
-        <activity android:name=".activity.login.PhoneCodeActivity"
+        <activity
+            android:name=".activity.login.PhoneCodeActivity"
             android:windowSoftInputMode="stateVisible|adjustResize"/>
         <activity android:name=".activity.login.RegistIDCardActivity_" />
-        <activity android:name=".activity.AgreementActivity"/>
-        <activity android:name=".activity.dixconuts.DiscountChannelAcyivity"/>
-        <activity android:name=".activity.WelcomeActivity"/>
-<activity android:name=".activity.goods.AppayActivity"/>
-        <activity android:name=".activity.user.AboutUsActivity"/>
+        <activity android:name=".activity.AgreementActivity" />
+        <activity android:name=".activity.dixconuts.DiscountChannelAcyivity" />
+        <activity android:name=".activity.WelcomeActivity" />
+        <activity android:name=".activity.goods.AppayActivity" />
+        <activity android:name=".activity.user.AboutUsActivity" />
     </application>
 
 

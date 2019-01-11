@@ -122,6 +122,7 @@ public final class TcStatInterface {
      */
     public static void setUrl(String url) {
         NetConfig.BASE_URL = url;
+
     }
 
     /**

@@ -59,8 +59,10 @@ public class MyCardActivity extends BaseActivity implements LoadingView.OnRetryL
     LoadingView mLoadingView;
     private Handler handler;
     private MyCardBean myCardBean;
-    Map<Integer,String> mapCard= new HashMap();
-    Map<Integer,String> mapUrl= new HashMap();
+    Map<Integer, String> mapCard = new HashMap();
+    Map<Integer, String> mapUrl = new HashMap();
+    private MyCardAdapter cardtAdapter;
+
     @Override
     public boolean getStatusBarColor() {
         return true;
@@ -73,12 +75,14 @@ public class MyCardActivity extends BaseActivity implements LoadingView.OnRetryL
 
 
     }
+
     @Override
     protected void postAgain() {
         getData();
     }
+
     private void getData() {
-        i=4;
+        i = 4;
         OkhttpUtil.okHttpPost(QUERYCARDLIST, new CallBackUtil.CallBackString() {
             @Override
             public void onFailure(Call call, Exception e) {
@@ -91,21 +95,17 @@ public class MyCardActivity extends BaseActivity implements LoadingView.OnRetryL
 
                 try {
                     myCardBean = gson.fromJson(response, MyCardBean.class);
-                    if (myCardBean.getUserCardList().size()==0){
+                    if (myCardBean.getUserCardList().size() == 0) {
                         mLoadingView.notifyDataChanged(LoadingView.State.empty);
 
-                    }else{
+                    } else {
                         mLoadingView.notifyDataChanged(LoadingView.State.done);
                         handler.sendEmptyMessage(UODATA_UI);
                     }
-                }catch (Exception e){
+                } catch (Exception e) {
 
 
                 }
-
-
-
-
 
 
             }
@@ -133,18 +133,17 @@ public class MyCardActivity extends BaseActivity implements LoadingView.OnRetryL
             switch (msg.what) {
 
                 case UODATA_UI:
-                    List<UserCardListBean> userCardList = myCardBean.getUserCardList();
+                    final List<UserCardListBean> userCardList = myCardBean.getUserCardList();
                     List<BankListBean> bankList = myCardBean.getBankList();
 
-                    for (int i=0;i<bankList.size();i++){
+                    for (int i = 0; i < bankList.size(); i++) {
 
-                        mapCard.put(bankList.get(i).getId(),bankList.get(i).getName());
+                        mapCard.put(bankList.get(i).getId(), bankList.get(i).getName());
 
-                        mapUrl.put(bankList.get(i).getId(),bankList.get(i).getIcon());
+                        mapUrl.put(bankList.get(i).getId(), bankList.get(i).getIcon());
                     }
 
-
-                    MyCardAdapter cardtAdapter = new MyCardAdapter(userCardList,mapCard,mapUrl);
+                    cardtAdapter = new MyCardAdapter(userCardList, mapCard, mapUrl);
 
                     recycleCard.setAdapter(cardtAdapter);
                     cardtAdapter.setOnItemClickListener(new OrderCardAdapter.OnItemClickListener() {
@@ -160,7 +159,87 @@ public class MyCardActivity extends BaseActivity implements LoadingView.OnRetryL
 
                         }
                     });
+                  /*  ItemTouchHelper mItemTouchHelper = new ItemTouchHelper(new ItemTouchHelper.Callback() {
+                        *//**
+                         * 设置滑动类型标记，可从两端滑动Item
+                         *//*
+                        @Override
+                        public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
+                            return makeMovementFlags(0, ItemTouchHelper.START );
+                        }
 
+                        @Override
+                        public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+
+
+                            return false;
+                        }
+
+                        *//**
+                         * 设置Item不支持长按拖动
+                         *//*
+                        @Override
+                        public boolean isLongPressDragEnabled() {
+                            return false;
+                        }
+
+                        *//**
+                         * Item支持滑动
+                         *//*
+                        @Override
+                        public boolean isItemViewSwipeEnabled() {
+                            return true;
+                        }
+
+                        *//**
+                         * 滑动删除Item的操作
+                         *//*
+                        @Override
+                        public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                            cardtAdapter.delete(viewHolder.getAdapterPosition());
+
+                        }
+
+                        *//**
+                         * Item被选中时候，改变Item的背景
+                         *//*
+                        @Override
+                        public void onSelectedChanged(RecyclerView.ViewHolder viewHolder, int actionState) {
+                            //  item被选中的操作
+                            if (actionState != ItemTouchHelper.ACTION_STATE_IDLE) {
+                                viewHolder.itemView.setBackgroundResource(R.color.gray);
+                            }
+                            super.onSelectedChanged(viewHolder, actionState);
+                        }
+
+                        *//**
+                         * 移动过程中重新绘制Item，随着滑动的距离，设置Item的透明度
+                         *//*
+                        @Override
+                        public void onChildDraw(Canvas c, RecyclerView recyclerView,
+                                                RecyclerView.ViewHolder viewHolder,
+                                                float dX, float dY, int actionState, boolean isCurrentlyActive) {
+                            float x = Math.abs(dX) + 0.5f;
+                            float width = viewHolder.itemView.getWidth();
+                            float alpha = 1f - x / width;
+                            viewHolder.itemView.setAlpha(alpha);
+                            super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState,
+                                    isCurrentlyActive);
+                        }
+
+                        *//**
+                         * 用户操作完毕或者动画完毕后调用，恢复item的背景和透明度
+                         *//*
+                        @Override
+                        public void clearView(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
+                            // 操作完毕后恢复颜色
+                            viewHolder.itemView.setBackgroundResource(R.color.white);
+                            viewHolder.itemView.setAlpha(1.0f);
+                            super.clearView(recyclerView, viewHolder);
+                        }
+                    });
+
+                    mItemTouchHelper.attachToRecyclerView(recycleCard);*/
                     break;
 
             }
@@ -182,7 +261,7 @@ public class MyCardActivity extends BaseActivity implements LoadingView.OnRetryL
         recycleCard.setLayoutManager(layoutManager);
         recycleCard.addItemDecoration(new SpaceItemDecoration(0, 40));
         MyReceiver receiver = new MyReceiver();
-       registerReceiver(receiver, new IntentFilter("com.wiseco.wisecoshop.mycard"));
+        registerReceiver(receiver, new IntentFilter("com.wiseco.wisecoshop.mycard"));
     }
 
 
@@ -198,7 +277,7 @@ public class MyCardActivity extends BaseActivity implements LoadingView.OnRetryL
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("bankList", (Serializable) bankList);
                 bundle.putSerializable("cardBrandsList", (Serializable) cardBrandsList);
-                open(AddCardActivity.class,bundle);
+                open(AddCardActivity.class, bundle);
                 break;
         }
     }

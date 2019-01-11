@@ -63,7 +63,7 @@ public class TcStatSdk {
 
     protected void upLoad() {
 
-        staticsManager.onSend();
+       // staticsManager.onSend();
     }
 
     /**

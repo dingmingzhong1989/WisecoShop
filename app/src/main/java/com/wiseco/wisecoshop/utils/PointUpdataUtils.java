@@ -8,6 +8,7 @@ import android.util.Log;
 
 import com.tamic.statInterface.statsdk.model.header.DeviceInfo;
 import com.tamic.statInterface.statsdk.model.header.NetworkInfo;
+import com.tamic.statInterface.statsdk.sp.SharedPreferencesHelper;
 import com.tamic.statInterface.statsdk.util.NetworkUtil;
 import com.wiseco.wisecoshop.okhttp.CallBackUtil;
 import com.wiseco.wisecoshop.okhttp.OkhttpUtil;
@@ -192,7 +193,7 @@ public class PointUpdataUtils {
         //注册渠道
         paramsMap.put("channelID", "");
         paramsMap.put("userID", CacheUtil.getString(sContext, "USERID", ""));
-
+        paramsMap.put("tempUserID", SharedPreferencesHelper.getInstance(sContext).getString("TempUserId", ""));
         paramsMap.put("location", "{" + "latitude:" + CacheUtil.getString(sContext, "LOCATION_LATITUDE_SP_KEY", "") +
                 ",longitude:" + CacheUtil.getString(sContext, "LOCATION_lONGITUDE_SP_KEY", "") + "}");
 

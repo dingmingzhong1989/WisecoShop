@@ -12,12 +12,20 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.wiseco.wisecoshop.R;
 import com.wiseco.wisecoshop.bean.user.UserCardListBean;
+import com.wiseco.wisecoshop.okhttp.CallBackUtil;
+import com.wiseco.wisecoshop.okhttp.OkhttpUtil;
 
 import java.util.List;
 import java.util.Map;
 
+import okhttp3.Call;
+
+import static com.wiseco.wisecoshop.MyApplication.gson;
+import static com.wiseco.wisecoshop.MyApplication.i;
 import static com.wiseco.wisecoshop.MyApplication.sContext;
+import static com.wiseco.wisecoshop.utils.HttpPostUtils.getParamsMap;
 import static com.wiseco.wisecoshop.utils.UrlUtil.BASE;
+import static com.wiseco.wisecoshop.utils.UrlUtil.DELETECARD;
 
 /**
  * Created by wiseco on 2018/12/18.
@@ -119,4 +127,38 @@ public class MyCardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
         }
     }
+
+    public void delete(int position) {
+        if(position < 0 || position > getItemCount()) {
+            return;
+        }
+
+        i=4;
+        Map<String, String> paramsMap = getParamsMap();
+        paramsMap.put("id", mUserCardList.get(position).getId() + "");
+        String s = gson.toJson(paramsMap);
+        OkhttpUtil.okHttpPostJson(DELETECARD, s,new CallBackUtil.CallBackString() {
+            @Override
+            public void onFailure(Call call, Exception e) {
+            }
+
+            @Override
+            public void onResponse(String response) {
+                Log.d("DELETECARD", response);
+                try {
+
+                } catch (Exception e) {
+
+
+                }
+
+
+            }
+        });
+
+        mUserCardList.remove(position);
+        notifyItemRemoved(position);
+    }
+
+
 }

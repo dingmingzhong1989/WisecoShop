@@ -1,5 +1,6 @@
 package com.wiseco.wisecoshop.activity.user;
 
+import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.Gravity;
@@ -129,14 +130,19 @@ public class AddCardActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.back, R.id.choice_bank, R.id.choice_card_type, R.id.choice_data, R.id.commit})
+    @OnClick({R.id.back, R.id.choice_bank, R.id.choice_card_type, R.id.choice_data, R.id.commit,R.id.cardnum})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.back:
                 finish();
                 break;
+            case R.id.cardnum:
+                cardnum.setFocusable(true);
+                cardnum.setFocusableInTouchMode(true);
+                cardnum.requestFocus();
+                break;
             case R.id.commit:
-                dissmissKey();
+               // dissmissKey();
                 //cardnum.setFocusable(false);
                 if (choiceBank.getText().equals("请选择银行")
                         || choiceCardType.getText().toString().equals("请选择卡种") ||
@@ -170,7 +176,7 @@ public class AddCardActivity extends BaseActivity {
 
                                 ToastUtils.showToast("添加成功");
                             } else {
-                                ToastUtils.showToast("添加失败");
+
                             }
                             Intent intent = new Intent();
                             intent.setAction("com.wiseco.wisecoshop.mycard");
@@ -184,18 +190,19 @@ public class AddCardActivity extends BaseActivity {
                 break;
             case R.id.choice_bank:
                 dissmissKey();
-                // cardnum.setFocusable(false);
+                cardnum.setFocusable(false);
                 initPopuWindow(R.layout.choice_wheelview, popupBanks, choiceBank);
 
                 break;
             case R.id.choice_card_type:
-                // cardnum.setFocusable(false);
+                 cardnum.setFocusable(false);
+                dissmissKey();
                 initPopuWindow(R.layout.choice_wheelview, popupCards, choiceCardType);
 
 
                 break;
             case R.id.choice_data:
-                // cardnum.setFocusable(false);
+                 cardnum.setFocusable(false);
                 dissmissKey();
                 initPopuWindow(R.layout.choice_wheelview, popupDatds, choiceData);
 
@@ -269,9 +276,8 @@ public class AddCardActivity extends BaseActivity {
     public void dissmissKey()
 
     {
-        InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-
-        imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), 0);
     }
 
 }

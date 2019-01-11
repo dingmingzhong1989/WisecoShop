@@ -12,8 +12,6 @@ import com.umeng.commonsdk.UMConfigure;
 import com.umeng.socialize.PlatformConfig;
 import com.wiseco.wisecoshop.utils.CacheUtil;
 
-import static com.wiseco.wisecoshop.utils.UrlUtil.EVENTLOG;
-
 /**
  * Created by wiseco on 2018/10/27.
  */
@@ -47,7 +45,7 @@ public class MyApplication extends Application {
 
 
         TcStatInterface.initialize(this, CacheUtil.getString(sContext, "USERID", ""), fileName);
-        TcStatInterface.setUrl(EVENTLOG);
+        //TcStatInterface.setUrl(BASE);
         TcStatInterface.setUploadPolicy(TcStatInterface.UploadPolicy.UPLOAD_POLICY_INTERVA, TcStatInterface.UPLOAD_TIME_ONE);
 
     }

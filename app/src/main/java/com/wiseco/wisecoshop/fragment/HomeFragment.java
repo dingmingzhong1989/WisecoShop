@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.stx.xhb.xbanner.XBanner;
+import com.sunfusheng.marqueeview.MarqueeView;
 import com.wiseco.wisecoshop.R;
 import com.wiseco.wisecoshop.activity.goods.CardDetailActivity;
 import com.wiseco.wisecoshop.activity.goods.GoodsListActivity;
@@ -92,19 +93,21 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
     LoadingView mLoadingView;
     @Bind(R.id.myScrollView)
     ScrollView myScrollView;
-
+    @Bind(R.id.marqueeView)
+    MarqueeView marqueeView;
     private Handler mHandler;
     private final int UODATA_UI = 200;
     private MainFragmentGoodsBean mainFragmentGoodsBean;
     private List<CcRLBean> ccRL;
     private List<ClRLBean> clRL;
     ArrayList<String> images = new ArrayList<>();
-
+    String notice="完成产品申请即可获得新手礼包";
     @Override
     public View initView() {
 
         View view = View.inflate(mActivity, R.layout.fragment_home, null);
         ButterKnife.bind(this, view);
+
 
         //显示的图片
         MyReceiver receiver = new MyReceiver();
@@ -118,10 +121,16 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
         mLoadingView.notifyDataChanged(LoadingView.State.done);
         mLoadingView.setOnErroyClickListener(this);
         if (isRegist()) {
-            regiest.setVisibility(View.INVISIBLE);
+            fragmentHomeNewUser.setVisibility(View.GONE);
 
+            marqueeView.setVisibility(View.VISIBLE);
+            List<String> info = new ArrayList<>();
+            info.add(notice);
+            info.add(notice);
+            info.add(notice);
+            marqueeView.startWithList(info);
         } else {
-
+            marqueeView.setVisibility(View.GONE);
         }
 
 
@@ -205,7 +214,7 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
 
                     } else {
 
-                        regiest.setVisibility(View.INVISIBLE);
+                        marqueeView.setVisibility(View.GONE);
 
                     }
                     List<BannerBean> banner = homeBean.getBanner();
@@ -448,10 +457,17 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
         public void onReceive(Context context, Intent intent) {
 
             if (isRegist()) {
-                regiest.setVisibility(View.INVISIBLE);
+                fragmentHomeNewUser.setVisibility(View.GONE);
 
+                marqueeView.setVisibility(View.VISIBLE);
+                List<String> info = new ArrayList<>();
+                info.add(notice);
+                info.add(notice);
+                info.add(notice);
+                marqueeView.startWithList(info);
             } else {
-
+                fragmentHomeNewUser.setVisibility(View.VISIBLE);
+                marqueeView.setVisibility(View.GONE);
             }
             getData();
           //  getOther();

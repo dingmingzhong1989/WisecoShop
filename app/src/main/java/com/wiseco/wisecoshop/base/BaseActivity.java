@@ -159,7 +159,7 @@ public abstract class BaseActivity extends AutoLayoutActivity  {
     private static final int YSPEED_MIN = 1000;
 
     //手指向右滑动时的最小距离
-    private static final int XDISTANCE_MIN = 300;
+    private static final int XDISTANCE_MIN = 600;
 
     //手指向上滑或下滑时的最小距离
     private static final int YDISTANCE_MIN = 100;

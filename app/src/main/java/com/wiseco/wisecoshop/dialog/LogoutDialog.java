@@ -71,6 +71,10 @@ public class LogoutDialog implements View.OnClickListener {
         intent.setAction("com.wiseco.wisecoshop.Userfragment");
 
         mSettinsActivity.sendBroadcast(intent);
+
+       Intent intent1 = new Intent();
+        intent1.setAction("com.wiseco.wisecoshop.fragment");
+        mSettinsActivity.sendBroadcast(intent1);
         ToastUtils.showToast("退出成功");
         // FileCacheUtil.cleanInternalCache(sContext);
         mSettinsActivity.finish();

@@ -8,6 +8,7 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 import com.tamic.statInterface.statsdk.constants.NetConfig;
 import com.tamic.statInterface.statsdk.http.TcHttpClient;
+import com.tamic.statInterface.statsdk.sp.SharedPreferencesHelper;
 import com.tamic.statInterface.statsdk.util.StatLog;
 
 import org.json.JSONArray;
@@ -25,6 +26,9 @@ import cz.msebera.android.httpclient.ParseException;
 import cz.msebera.android.httpclient.entity.ByteArrayEntity;
 import cz.msebera.android.httpclient.message.BasicHeader;
 import cz.msebera.android.httpclient.protocol.HTTP;
+
+import static com.tamic.statInterface.statsdk.constants.NetConfig.EVENTLOG;
+import static com.tamic.statInterface.statsdk.core.TcStaticsManagerImpl.mContext;
 
 /**
  * Created by LIUYONGKUI726 on 2016-04-18.
@@ -63,7 +67,7 @@ public class TcNetEngine {
     Header[] reqHeaders;
 
     Header header;
-    private ByteArrayEntity entity;
+
 
     public TcNetEngine(Context context, IUpLoadlistener upLoadlistener) {
 
@@ -100,9 +104,10 @@ public class TcNetEngine {
     }
 
     public String start(final String... strings) {
+        String value = "";
         if (headers.size() >= 0) {
             headers.clear();
-        }
+        }else{}
         if (headers != null && headers.size() > 0) {
             reqHeaders = new Header[headers.size()];
             Set<String> keys = headers.keySet();
@@ -127,15 +132,13 @@ public class TcNetEngine {
                 reqHeaders[index++] = header;
             }
 
-        }
+        }else{}
 
         try {
             JSONObject jsonObjectALL = new JSONObject(strings[0]);
-
-
             // 通过标识(person)，获取JSON数组
             JSONArray jsonArray = jsonObjectALL.getJSONArray("eventlog");
-            String value = "";
+
             for (int i = 0; i < jsonArray.length(); i++) {
                 // JSON数组里面的具体-JSON对象
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
@@ -145,24 +148,24 @@ public class TcNetEngine {
                 String operation_time = jsonObject.optString("operation_time", null);
                 String comment = jsonObject.optString("comment", null);
 
-                value +=  user_id + "#" +""+"#"+ action_id + "#" +operation_time + "#" + target_id + "#" +  comment +  "\n";
+                value +=  user_id + "#" + SharedPreferencesHelper.getInstance(mContext).getString("TempUserId", "")+"#"+ action_id + "#" +operation_time + "#" + target_id + "#" +  comment +  "\n";
 
                 // 日志打印结果：
                 Log.d(TAG, "analyzeJSONArray2 解析的结果：name" + value);
             }
-            if (value != null || !value.equals("")){
 
+
+            if (value == null || value.equals("")){
+
+                Log.d(TAG, "value == null || value.equals(\"\")" );
+            }else{
                 JSONObject jsonObject = new JSONObject();
                 jsonObject.put("key", "eventlog");
                 jsonObject.put("value", value);
-
-
-                entity = new ByteArrayEntity(jsonObject.toString().getBytes("UTF-8"));
+                ByteArrayEntity entity = new ByteArrayEntity(jsonObject.toString().getBytes("UTF-8"));
                 entity.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
 
-                TcHttpClient.post(context, "https://m.wisecofincloud.com/api/eventlog/sendlog", reqHeaders, entity, RequestParams.APPLICATION_JSON, mTaskHandler);
-            }else{
-
+                TcHttpClient.post(context, EVENTLOG, reqHeaders, entity, RequestParams.APPLICATION_JSON, mTaskHandler);
             }
 
 
@@ -198,24 +201,23 @@ public class TcNetEngine {
 
         @Override
         public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-
-            if (mUpLoadlistener != null) {
+            Log.d(TAG, "埋点上传成功");
+           if (mUpLoadlistener != null) {
                 mUpLoadlistener.onSucess();
+            }else{
+
+
             }
 
-            for (Header tmp : headers) {
-                StatLog.d(TAG, tmp.getName() + ":" + tmp.getValue());
-            }
-
-            StatLog.d(TAG, "response code: " + statusCode);
             if (statusCode == HttpStatus.SC_OK) {
                 StatLog.d(TAG, "onSuccess");
+
                 mCanContinue = false;
             } else if (statusCode == HttpStatus.SC_PARTIAL_CONTENT) {
                 mCanContinue = true;
             }
 
-            Log.d(TAG, "埋点上传成功");
+
         }
 
         @Override

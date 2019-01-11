@@ -35,6 +35,8 @@ import cz.msebera.android.httpclient.protocol.HTTP;
 import cz.msebera.android.httpclient.util.EncodingUtils;
 
 import static com.tamic.statInterface.statsdk.constants.NetConfig.ENVBASE;
+import static com.tamic.statInterface.statsdk.constants.NetConfig.GETCONFIG;
+import static com.tamic.statInterface.statsdk.constants.NetConfig.GETCONFIGVERSION;
 
 
 /**
@@ -75,6 +77,7 @@ public class TcStaticsManagerImpl implements TcStaticsManager, TcObserverPresent
 
     @Override
     public boolean onInit(String useId, String fileName) {
+
         try {
             PackageInfo packageInfo = mContext.getPackageManager().getPackageInfo(mContext.getPackageName(), 0);
             versionName = packageInfo.versionName;
@@ -94,28 +97,36 @@ public class TcStaticsManagerImpl implements TcStaticsManager, TcObserverPresent
         //useId=useId;
         targetIdMaps = getStatIdMaps("target_id.json");
 
-        String tempUserId = SharedPreferencesHelper.getInstance(mContext).getString("TempUserId", "");
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                String tempUserId = SharedPreferencesHelper.getInstance(mContext).getString("TempUserId", "");
 
-        if (tempUserId==null || tempUserId.equals("")){
+                if (tempUserId==null || tempUserId.equals("")){
 
-            TcHttpClient.post( ENVBASE,new ResponseTempHandler(true));
-        }else{
-
-
-        }
+                    TcHttpClient.post( ENVBASE,new ResponseTempHandler(true));
+                }else{
 
 
+                }
 
-        try {
-            JSONObject jsonObject = new JSONObject();
 
-            jsonObject.put("apptype", "1");
-            ByteArrayEntity entity = new ByteArrayEntity(jsonObject.toString().getBytes("UTF-8"));
-            entity.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
-            TcHttpClient.post(mContext, "https://m.wisecofincloud.com/api/eventlog/getconfigversion", entity, RequestParams.APPLICATION_JSON, new PaJsonHttpResponseHandler(true));
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+
+                try {
+                    JSONObject jsonObject = new JSONObject();
+
+                    jsonObject.put("apptype", "1");
+                    ByteArrayEntity entity = new ByteArrayEntity(jsonObject.toString().getBytes("UTF-8"));
+                    entity.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
+                    TcHttpClient.post(mContext, GETCONFIGVERSION, entity, RequestParams.APPLICATION_JSON, new PaJsonHttpResponseHandler(true));
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }).start();
+
+
 
 
         Log.d("useId", useId);
@@ -131,8 +142,6 @@ public class TcStaticsManagerImpl implements TcStaticsManager, TcObserverPresent
         new Thread(new Runnable() {
             @Override
             public void run() {
-
-
                 TcUpLoadManager.getInstance(mContext).report(JsonUtil.toJSONString(StaticsAgent.getDataBlock()));
             }
         }).start();
@@ -208,7 +217,7 @@ public class TcStaticsManagerImpl implements TcStaticsManager, TcObserverPresent
         //recard APP exit
         // DataConstruct.storeAppAction("2");
 
-        onSend();
+        //onSend();
 
         onRelease();
     }
@@ -409,7 +418,7 @@ public class TcStaticsManagerImpl implements TcStaticsManager, TcObserverPresent
                         jsonObject.put("appType", "1");
                         ByteArrayEntity entity = new ByteArrayEntity(jsonObject.toString().getBytes("UTF-8"));
                         entity.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
-                        TcHttpClient.post(mContext, "https://m.wisecofincloud.com/api/eventlog/getconfig", entity, RequestParams.APPLICATION_JSON, new ResponseHandler(true));
+                        TcHttpClient.post(mContext, GETCONFIG, entity, RequestParams.APPLICATION_JSON, new ResponseHandler(true));
                     } catch (UnsupportedEncodingException e) {
                         e.printStackTrace();
                     }
@@ -451,7 +460,7 @@ public class TcStaticsManagerImpl implements TcStaticsManager, TcObserverPresent
 
             //String str = Base64.encodeToString(responseBody,1);
 
-            Log.d("1234567", "statusCode==" + JSONObject.toJSON(parse));
+            Log.d("1234567", "statusCodetargetList==" + JSONObject.toJSON(parse));
 
             TargetBean targetBean = JSONObject.parseObject(JSONObject.toJSON(parse).toString(), TargetBean.class);
 
@@ -506,8 +515,13 @@ public class TcStaticsManagerImpl implements TcStaticsManager, TcObserverPresent
 
         @Override
         public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-
+           // cancel();
         }
 
+    }
+
+    void cancel() {
+
+        TcHttpClient.cancle("", true);
     }
 }

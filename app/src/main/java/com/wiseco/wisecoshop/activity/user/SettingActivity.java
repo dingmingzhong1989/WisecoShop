@@ -16,7 +16,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.wiseco.wisecoshop.R;
-import com.wiseco.wisecoshop.activity.dixconuts.SearchActivity;
 import com.wiseco.wisecoshop.base.BaseActivity;
 import com.wiseco.wisecoshop.dialog.CallDialog;
 import com.wiseco.wisecoshop.dialog.LogoutDialog;
@@ -139,7 +138,7 @@ public class SettingActivity extends BaseActivity {
                 new LogoutDialog(this).show();
                 break;
             case  R.id.setting_vission:
-               open(SearchActivity.class);
+              // open(SearchActivity.class);
                 break;
 
         }

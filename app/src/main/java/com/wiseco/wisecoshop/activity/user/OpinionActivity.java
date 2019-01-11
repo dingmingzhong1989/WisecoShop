@@ -103,7 +103,7 @@ public class OpinionActivity extends BaseActivity {
 
                         } catch (Exception e) {
 
-                            ToastUtils.showToast("提交失败");
+                            //ToastUtils.showToast("提交失败");
                         }
 
 
